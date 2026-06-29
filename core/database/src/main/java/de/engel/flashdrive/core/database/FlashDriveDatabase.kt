@@ -20,7 +20,7 @@ import de.engel.flashdrive.core.database.entity.StudySessionEntity
         StudyRecordEntity::class,
     ],
     version = 2,
-    exportSchema = true,
+    exportSchema = false,
 )
 @TypeConverters(Converters::class)
 abstract class FlashDriveDatabase : RoomDatabase() {

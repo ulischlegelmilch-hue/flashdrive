@@ -1,4 +1,4 @@
-package de.engel.flashdrive.core.database
+package de.engel.flashdrive.core.data.di
 
 import android.content.Context
 import androidx.room.Room
@@ -7,6 +7,11 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import de.engel.flashdrive.core.database.FlashDriveDatabase
+import de.engel.flashdrive.core.database.dao.DeckDao
+import de.engel.flashdrive.core.database.dao.FlashcardDao
+import de.engel.flashdrive.core.database.dao.StudyRecordDao
+import de.engel.flashdrive.core.database.dao.StudySessionDao
 import javax.inject.Singleton
 
 @Module
