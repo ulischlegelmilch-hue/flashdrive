@@ -4,6 +4,7 @@ import de.engel.flashdrive.core.domain.algorithm.Sm2Algorithm
 import de.engel.flashdrive.core.model.Flashcard
 import de.engel.flashdrive.core.model.ReviewQuality
 import de.engel.flashdrive.core.model.StudyRecord
+import javax.inject.Inject
 
 /**
  * Repository interface for persisting card updates and study records.
@@ -18,7 +19,7 @@ interface CardRepository {
  * Submits a review for a flashcard: computes the new SM-2 state,
  * updates the card, and records the study event.
  */
-class SubmitReviewUseCase(
+class SubmitReviewUseCase @Inject constructor(
     private val repository: CardRepository
 ) {
 
