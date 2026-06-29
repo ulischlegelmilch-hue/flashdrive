@@ -46,9 +46,7 @@ jobs:
       run: echo "sdk.dir=$ANDROID_HOME" > local.properties
 
     - name: Build debug APK
-      run: |
-        set -o pipefail
-        ./gradlew :app:assembleDebug --no-daemon --stacktrace --info 2>&1 | tail -100 | tee /tmp/build.log
+      run: ./gradlew :app:assembleDebug --no-daemon --stacktrace --info 2>&1 | tee /tmp/build.log
 
     - name: Upload build log (always)
       if: always()
