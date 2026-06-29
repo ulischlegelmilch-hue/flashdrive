@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 env:
   ANDROID_HOME: /usr/local/lib/android/sdk
 
@@ -43,7 +46,9 @@ jobs:
       run: echo "sdk.dir=$ANDROID_HOME" > local.properties
 
     - name: Build debug APK
-      run: ./gradlew :app:assembleDebug --no-daemon --stacktrace 2>&1 | tee /tmp/build.log
+      run: |
+        set -o pipefail
+        ./gradlew :app:assembleDebug --no-daemon --stacktrace 2>&1 | tee /tmp/build.log
 
     - name: Upload build log (always)
       if: always()
