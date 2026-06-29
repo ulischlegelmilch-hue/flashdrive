@@ -48,7 +48,7 @@ jobs:
     - name: Build debug APK
       run: |
         set -o pipefail
-        ./gradlew :app:assembleDebug --no-daemon --stacktrace 2>&1 | tee /tmp/build.log
+        ./gradlew :app:assembleDebug --no-daemon --stacktrace --info 2>&1 | tail -100 | tee /tmp/build.log
 
     - name: Upload build log (always)
       if: always()
