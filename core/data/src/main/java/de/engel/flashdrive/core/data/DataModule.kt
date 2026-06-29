@@ -11,7 +11,7 @@ import de.engel.flashdrive.core.data.repository.StudyRepository
 import de.engel.flashdrive.core.data.repository.impl.DeckRepositoryImpl
 import de.engel.flashdrive.core.data.repository.impl.FlashcardRepositoryImpl
 import de.engel.flashdrive.core.data.repository.impl.StudyRepositoryImpl
-import de.engel.flashdrive.core.domain.usecase.SubmitReviewUseCase
+import de.engel.flashdrive.core.domain.usecase.CardRepository as DomainCardRepository
 import javax.inject.Singleton
 
 @Module
@@ -40,13 +40,5 @@ abstract class DataModule {
     @Singleton
     abstract fun bindCardRepository(
         impl: CardRepository,
-    ): CardRepository
-
-    @Binds
-    @Singleton
-    abstract fun bindSubmitReviewUseCase(
-        cardRepository: CardRepository,
-    ): SubmitReviewUseCase
+    ): DomainCardRepository
 }
-
-
