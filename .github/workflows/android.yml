@@ -42,6 +42,10 @@ jobs:
     - name: Create local.properties
       run: echo "sdk.dir=$ANDROID_HOME" > local.properties
 
+    - name: Compile debug (check only)
+      run: ./gradlew compileDebugKotlin compileDebugJavaWithJavac --stacktrace --info 2>&1 | tail -200
+      continue-on-error: true
+
     - name: Build debug APK
       run: ./gradlew assembleDebug --stacktrace
 
