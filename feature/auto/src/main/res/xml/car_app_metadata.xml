@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<car-app xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Minimum car API level required for this app. -->
+    <metadata
+        android:name="androidx.car.app.minCarApiLevel"
+        android:value="1" />
+</car-app>

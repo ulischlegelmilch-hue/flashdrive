@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Android Auto car app metadata -->
+    <meta-data
+        android:name="androidx.car.app.CAR_APP"
+        android:resource="@xml/car_app_metadata" />
+
+    <!-- The Car App Service declared in the app module but implemented in this module.
+         The app module will reference it via the :feature:auto dependency. -->
+    <application>
+        <service
+            android:name=".FlashDriveCarAppService"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="androidx.car.app.CarAppService" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
