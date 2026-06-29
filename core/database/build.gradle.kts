@@ -3,9 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
-    id("kotlin-kapt")
 }
-
 android {
     namespace = "de.engel.flashdrive.core.database"
     compileSdk = 35
@@ -45,7 +43,7 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)

@@ -25,5 +25,5 @@ include(":feature:study")
 include(":feature:statistics")
 include(":feature:import")
 include(":feature:settings")
-include(":feature:auto")
+//include(":feature:auto") // temporarily disabled - Android Auto module
 include(":feature:deck")
